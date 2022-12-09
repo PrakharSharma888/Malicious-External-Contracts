@@ -5,7 +5,7 @@ import "./Helper.sol";
 contract Good {
     Helper helper;
 
-    constructor(address _helper) payable {
+    constructor(address _helper){
         helper = Helper(_helper);
     }
 
@@ -14,7 +14,7 @@ contract Good {
     }
 
     function addUserToList() public{
-        helper.setUserEligible(msg.sender);
+        helper.addUserToList(msg.sender);
     }
 
     fallback() external {}
